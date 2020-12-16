@@ -17,25 +17,23 @@ public class Card extends Jogo {
 		return (this.isPrimeiraMao() ? this.getValor() : this.getValor()/2) + (this.getValor() * this.getQuantidade());
 		
 	}
-	
 
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
+		sb.append(";");
 		sb.append(this.getQuantidade());
 		sb.append(";");
 		sb.append(this.isOnline());
 		sb.append(";");
 		
-		return sb.toString();
-		
+		return sb.toString();	
 	}
 	
 	//Getters
 	public int getQuantidade() {
 		return quantidade;
 	}
-
 
 	public boolean isOnline() {
 		return online;
@@ -45,13 +43,11 @@ public class Card extends Jogo {
 		this.online = online;
 	}
 
-	public void setQuantidade(String string) throws QuantidadeInvalidaException{
+	public void setQuantidade(int quantidade) throws QuantidadeInvalidaException{
 		
 		if(quantidade <=0 && quantidade >= 10) {
-			throw new QuantidadeInvalidaException("PorÁ„o inv·lida");
+			throw new QuantidadeInvalidaException("Por√ß√£o inv√°lida");
 		}
 	}
-
-
 	
 }
