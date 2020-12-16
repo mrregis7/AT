@@ -39,7 +39,7 @@ public class Card extends Jogo {
 		return online;
 	}
 
-	public void setOnline(Boolean valueOf) {
+	public void setOnline(Boolean online) {
 		this.online = online;
 	}
 
