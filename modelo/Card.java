@@ -45,8 +45,8 @@ public class Card extends Jogo {
 
 	public void setQuantidade(int quantidade) throws QuantidadeInvalidaException{
 		
-		if(quantidade <=0 && quantidade >= 10) {
-			throw new QuantidadeInvalidaException("Porção inválida");
+		if(quantidade <=0) {
+			throw new QuantidadeInvalidaException("Quantidade inválida");
 		}
 	}
 	
