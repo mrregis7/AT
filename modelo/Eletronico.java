@@ -7,7 +7,7 @@ public class Eletronico extends Jogo {
 	private float impostoInternacional;
 	private String marca;
 
-	//Construtor da m„e
+	//Construtor da m√£e
 	public Eletronico(String descricao, float valor, boolean primeiraMao) {
 		super(descricao, valor, primeiraMao);
 	}
@@ -25,36 +25,39 @@ public class Eletronico extends Jogo {
 	}
 	
 	
-	//MÈtodo da m„e
-	//No mÈtodo abstrato, crie uma regra de negÛcio que utilize atributos da filha e da m„e.
+	//M√©todo da m√£e
+	//No m√©todo abstrato, crie uma regra de neg√≥cio que utilize atributos da filha e da m√£e.
 	@Override
 	public float calcularValorVenda() { 
 		
 		float produtoImportado = 0;
 		if(this.isPrimeiraMao()) {
-			produtoImportado = 0.2f;
+			produtoImportado = 35;
 		}
 		
 		
-		return this.getValor() * produtoImportado  + this.getImpostoInternacional();
+		return this.getValor() + (this.getValor() * this.getImpostoInternacional()) + produtoImportado;
 	}
 	
 
 	//Getters
-	//ExceÁ„o
+	//Exce√ß√£o
+
 	public float getImpostoInternacional() {
 		return impostoInternacional;
 	}
 	
-	public void setImpostoInternacional(float ImpostoInternacional) throws ImpostoInvalidoException {
+	public void setImpostoInternacional(float impostoInternacional) throws ImpostoInvalidoException {
 		
-		if(impostoInternacional >= 0.2) {
-			throw new ImpostoInvalidoException("Muito caro, ser· necess·rio negociar o preÁo com o fornecedor!");
+		if(impostoInternacional > 0.21) {
+			throw new ImpostoInvalidoException("Muito caro, ser√° necess√°rio negociar o pre√ßo com o fornecedor!");
 		}
 		
 		this.impostoInternacional = impostoInternacional;
 	}
 
+
+	
 	public String getMarca() {
 		return marca;
 	}
@@ -63,8 +66,6 @@ public class Eletronico extends Jogo {
 
 	public void setMarca(String string) {		
 	}
-
-
 
 
 }
